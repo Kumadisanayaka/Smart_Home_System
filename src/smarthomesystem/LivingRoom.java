@@ -42,8 +42,7 @@ public class LivingRoom extends javax.swing.JFrame {
         statusTvlbl = new javax.swing.JLabel();
         speedlbl1 = new javax.swing.JLabel();
         lightlbl3 = new javax.swing.JLabel();
-        statusAclbl = new javax.swing.JLabel();
-        templbl = new javax.swing.JLabel();
+        statusDoorlbl = new javax.swing.JLabel();
         controlbtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
         backbtn = new javax.swing.JButton();
@@ -98,12 +97,10 @@ public class LivingRoom extends javax.swing.JFrame {
         lightlbl3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lightlbl3.setForeground(new java.awt.Color(255, 255, 0));
         lightlbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lightlbl3.setText("AC");
+        lightlbl3.setText("Door");
         lightlbl3.setOpaque(true);
 
-        statusAclbl.setText("Status :");
-
-        templbl.setText("Temperature   :");
+        statusDoorlbl.setText("Status :");
 
         controlbtn.setBackground(new java.awt.Color(51, 255, 0));
         controlbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -161,8 +158,7 @@ public class LivingRoom extends javax.swing.JFrame {
                             .addComponent(statusTvlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(speedlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lightlbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statusAclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(templbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(statusDoorlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 91, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
@@ -204,9 +200,7 @@ public class LivingRoom extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(lightlbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(statusAclbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(templbl))
+                        .addComponent(statusDoorlbl))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -261,10 +255,9 @@ public class LivingRoom extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel speedlbl;
     private javax.swing.JLabel speedlbl1;
-    private javax.swing.JLabel statusAclbl;
+    private javax.swing.JLabel statusDoorlbl;
     private javax.swing.JLabel statusFanlbl;
     private javax.swing.JLabel statusLightlbl;
     private javax.swing.JLabel statusTvlbl;
-    private javax.swing.JLabel templbl;
     // End of variables declaration//GEN-END:variables
 }
