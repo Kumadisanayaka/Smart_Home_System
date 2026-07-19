@@ -72,6 +72,11 @@ public class HomePage extends javax.swing.JFrame {
         viewStatusbtn.setBackground(new java.awt.Color(255, 255, 0));
         viewStatusbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         viewStatusbtn.setText("View Status");
+        viewStatusbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStatusbtnActionPerformed(evt);
+            }
+        });
 
         exitbtn.setBackground(new java.awt.Color(255, 0, 51));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -179,6 +184,11 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         new RoomsPage().setVisible(true);
     }//GEN-LAST:event_manageRoombtnActionPerformed
+
+    private void viewStatusbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusbtnActionPerformed
+        // TODO add your handling code here:
+        new ViewStatus().setVisible(true);
+    }//GEN-LAST:event_viewStatusbtnActionPerformed
 
     /**
      * @param args the command line arguments
