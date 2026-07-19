@@ -78,8 +78,7 @@
                               <Component id="statusTvlbl" min="-2" pref="53" max="-2" attributes="0"/>
                               <Component id="speedlbl1" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                               <Component id="lightlbl3" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="statusAclbl" min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="templbl" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="statusDoorlbl" min="-2" pref="53" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
                       </Group>
@@ -128,9 +127,7 @@
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="lightlbl3" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="statusAclbl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="templbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="statusDoorlbl" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jSeparator1" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
                   </Group>
@@ -259,18 +256,13 @@
               <Color blue="0" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="AC"/>
+            <Property name="text" type="java.lang.String" value="Door"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="statusAclbl">
+        <Component class="javax.swing.JLabel" name="statusDoorlbl">
           <Properties>
             <Property name="text" type="java.lang.String" value="Status :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="templbl">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Temperature   :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="controlbtn">
