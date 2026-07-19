@@ -70,15 +70,30 @@ public class RoomsPage extends javax.swing.JFrame {
 
         bedRoombtn.setBackground(new java.awt.Color(255, 255, 0));
         bedRoombtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bedRoombtn.setText("Bed Room");
+        bedRoombtn.setText("Bedroom");
+        bedRoombtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bedRoombtnActionPerformed(evt);
+            }
+        });
 
         kitchenbtn.setBackground(new java.awt.Color(255, 255, 0));
         kitchenbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        kitchenbtn.setText("Kitchen Room");
+        kitchenbtn.setText("Kitchen");
+        kitchenbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kitchenbtnActionPerformed(evt);
+            }
+        });
 
         officebtn.setBackground(new java.awt.Color(255, 255, 0));
         officebtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         officebtn.setText("Office");
+        officebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                officebtnActionPerformed(evt);
+            }
+        });
 
         exitbtn.setBackground(new java.awt.Color(255, 0, 0));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -167,6 +182,21 @@ public class RoomsPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         new LivingRoom().setVisible(true);
     }//GEN-LAST:event_livingRoombtnActionPerformed
+
+    private void bedRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedRoombtnActionPerformed
+        
+        new Bedroom().setVisible(true);
+    }//GEN-LAST:event_bedRoombtnActionPerformed
+
+    private void kitchenbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitchenbtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_kitchenbtnActionPerformed
+
+    private void officebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_officebtnActionPerformed
+        // TODO add your handling code here:
+        new Office().setVisible(true);
+    }//GEN-LAST:event_officebtnActionPerformed
 
     /**
      * @param args the command line arguments
