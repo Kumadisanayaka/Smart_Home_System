@@ -15,6 +15,8 @@ public class HomePage extends javax.swing.JFrame {
      */
     public HomePage() {
         initComponents();
+        setTitle("Home");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -49,19 +51,26 @@ public class HomePage extends javax.swing.JFrame {
 
         rightPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        manageRoombtn.setBackground(new java.awt.Color(255, 0, 51));
-        manageRoombtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        manageRoombtn.setForeground(new java.awt.Color(255, 255, 255));
+        manageRoombtn.setBackground(new java.awt.Color(255, 255, 0));
+        manageRoombtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         manageRoombtn.setText("Manage Rooms");
+        manageRoombtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageRoombtnActionPerformed(evt);
+            }
+        });
 
-        controlbtn.setBackground(new java.awt.Color(255, 0, 51));
-        controlbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        controlbtn.setForeground(new java.awt.Color(255, 255, 255));
+        controlbtn.setBackground(new java.awt.Color(255, 255, 0));
+        controlbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         controlbtn.setText("Control Devices");
+        controlbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                controlbtnActionPerformed(evt);
+            }
+        });
 
-        viewStatusbtn.setBackground(new java.awt.Color(255, 0, 51));
-        viewStatusbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewStatusbtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewStatusbtn.setBackground(new java.awt.Color(255, 255, 0));
+        viewStatusbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         viewStatusbtn.setText("View Status");
 
         exitbtn.setBackground(new java.awt.Color(255, 0, 51));
@@ -102,7 +111,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(controlbtn)
                 .addGap(18, 18, 18)
                 .addComponent(viewStatusbtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(exitbtn)
                 .addGap(24, 24, 24))
         );
@@ -160,6 +169,16 @@ public class HomePage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void controlbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlbtnActionPerformed
+        // TODO add your handling code here:
+        new DeviceControlPage().setVisible(true);
+    }//GEN-LAST:event_controlbtnActionPerformed
+
+    private void manageRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageRoombtnActionPerformed
+        // TODO add your handling code here:
+        new RoomsPage().setVisible(true);
+    }//GEN-LAST:event_manageRoombtnActionPerformed
 
     /**
      * @param args the command line arguments

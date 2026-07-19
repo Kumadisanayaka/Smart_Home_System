@@ -8,13 +8,15 @@ package smarthomesystem;
  *
  * @author User
  */
-public class HomePage extends javax.swing.JFrame {
+public class DeviceControlPage extends javax.swing.JFrame {
 
     /**
      * Creates new form HomePage
      */
-    public HomePage() {
+    public DeviceControlPage() {
         initComponents();
+        setTitle("Device Control");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -26,186 +28,293 @@ public class HomePage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        leftPanel = new javax.swing.JPanel();
-        headinglbl = new javax.swing.JLabel();
-        logolbl = new javax.swing.JLabel();
-        rightPanel = new javax.swing.JPanel();
-        manageRoombtn = new javax.swing.JButton();
-        controlbtn = new javax.swing.JButton();
-        viewStatusbtn = new javax.swing.JButton();
-        exitbtn = new javax.swing.JButton();
-        sLogo = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        roomcbox = new javax.swing.JComboBox<>();
+        deviceCbox = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
+        valuelbl = new javax.swing.JLabel();
+        valueSlider = new javax.swing.JSlider();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        viewStatusbtn = new javax.swing.JButton();
+        backtohomebtn = new javax.swing.JButton();
+        exitbtn = new javax.swing.JButton();
+        lockedlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        leftPanel.setBackground(new java.awt.Color(255, 255, 0));
+        mainPanel.setBackground(new java.awt.Color(255, 255, 0));
 
-        headinglbl.setFont(new java.awt.Font("Microsoft Tai Le", 1, 18)); // NOI18N
-        headinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        headinglbl.setText("SMART HOME SYSTEM");
+        jLabel1.setBackground(new java.awt.Color(51, 204, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("DEVICE CONTROL");
+        jLabel1.setOpaque(true);
 
-        logolbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/smarthomesystem/logo (3).png"))); // NOI18N
+        jLabel2.setText("Device :");
 
-        rightPanel.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Room :");
 
-        manageRoombtn.setBackground(new java.awt.Color(255, 0, 51));
-        manageRoombtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        manageRoombtn.setForeground(new java.awt.Color(255, 255, 255));
-        manageRoombtn.setText("Manage Rooms");
+        roomcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Living Room", "Bedroom", "Kitchen", "Office" }));
+        roomcbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roomcboxActionPerformed(evt);
+            }
+        });
 
-        controlbtn.setBackground(new java.awt.Color(255, 0, 51));
-        controlbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        controlbtn.setForeground(new java.awt.Color(255, 255, 255));
-        controlbtn.setText("Control Devices");
+        deviceCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Light", "Fan", "Tv", "Door", " " }));
+        deviceCbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deviceCboxActionPerformed(evt);
+            }
+        });
 
-        viewStatusbtn.setBackground(new java.awt.Color(255, 0, 51));
+        jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
+
+        valuelbl.setText("Value : ");
+
+        btn1.setBackground(new java.awt.Color(0, 255, 0));
+        btn1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn1.setForeground(new java.awt.Color(255, 255, 255));
+        btn1.setText("ON");
+
+        btn2.setBackground(new java.awt.Color(255, 0, 0));
+        btn2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn2.setForeground(new java.awt.Color(255, 255, 255));
+        btn2.setText("OFF");
+
+        jSeparator2.setBackground(new java.awt.Color(153, 153, 153));
+
+        viewStatusbtn.setBackground(new java.awt.Color(51, 255, 0));
         viewStatusbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewStatusbtn.setForeground(new java.awt.Color(255, 255, 255));
         viewStatusbtn.setText("View Status");
+
+        backtohomebtn.setBackground(new java.awt.Color(255, 0, 51));
+        backtohomebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        backtohomebtn.setForeground(new java.awt.Color(255, 255, 255));
+        backtohomebtn.setText("Back To Home");
 
         exitbtn.setBackground(new java.awt.Color(255, 0, 51));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("Exit");
 
-        sLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/smarthomesystem/3rdLogo.png"))); // NOI18N
-
-        javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
-        rightPanel.setLayout(rightPanelLayout);
-        rightPanelLayout.setHorizontalGroup(
-            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rightPanelLayout.createSequentialGroup()
-                .addComponent(sLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator1)
+                            .addComponent(jSeparator2)))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(197, 197, 197)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(roomcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(deviceCbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(203, 203, 203)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addComponent(valuelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGap(218, 218, 218)
+                                        .addComponent(lockedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGap(190, 190, 190)
+                                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(29, 29, 29)
+                                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 143, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
-                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                        .addComponent(exitbtn)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                        .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(manageRoombtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(controlbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(viewStatusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(66, 66, 66))))
-        );
-        rightPanelLayout.setVerticalGroup(
-            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rightPanelLayout.createSequentialGroup()
-                .addComponent(sLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(manageRoombtn)
-                .addGap(18, 18, 18)
-                .addComponent(controlbtn)
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(backtohomebtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(viewStatusbtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(exitbtn)
-                .addGap(24, 24, 24))
+                .addGap(242, 242, 242))
         );
-
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Welcome Home");
-
-        javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
-        leftPanel.setLayout(leftPanelLayout);
-        leftPanelLayout.setHorizontalGroup(
-            leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftPanelLayout.createSequentialGroup()
-                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(leftPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logolbl, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                            .addGroup(leftPanelLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(headinglbl, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(leftPanelLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        leftPanelLayout.setVerticalGroup(
-            leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(headinglbl)
-                .addGap(41, 41, 41)
-                .addComponent(logolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(roomcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(deviceCbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valuelbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lockedlbl)
+                .addGap(14, 14, 14)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(viewStatusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backtohomebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(leftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(leftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void roomcboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomcboxActionPerformed
+        // TODO add your handling code here:
+        deviceCbox.removeAllItems();
+        
+        String room = roomcbox.getSelectedItem().toString();
+        
+        switch(room){
+            case "Living Room":
+                deviceCbox.addItem("Light");
+                deviceCbox.addItem("Fan");
+                deviceCbox.addItem("Tv");
+                deviceCbox.addItem("Door");
+                break;
+            case "Bedroom":
+                deviceCbox.addItem("Light");
+                deviceCbox.addItem("Fan");
+                deviceCbox.addItem("AC");
+                break;
+            case "Kitchen":
+                deviceCbox.addItem("Light");
+                deviceCbox.addItem("Fan");
+                break;
+            case "Office":
+                deviceCbox.addItem("Light");
+                deviceCbox.addItem("Fan");
+                deviceCbox.addItem("AC");
+                break;
+        }
+        
+        
+        
+    }//GEN-LAST:event_roomcboxActionPerformed
+
+    private void deviceCboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deviceCboxActionPerformed
+        Object selected = deviceCbox.getSelectedItem();
+
+    if(selected == null){
+        return;
+    }
+
+    String device = selected.toString();
+
+    switch(device){
+        case "Light":
+            valuelbl.setText("Brightness : " + valueSlider.getValue());
+            valueSlider.setVisible(true);
+            btn1.setText("ON");
+            btn2.setText("OFF");
+            break;
+
+        case "Fan":
+            valuelbl.setText("Speed : " + valueSlider.getValue());
+            valueSlider.setVisible(true);
+            btn1.setText("ON");
+            btn2.setText("OFF");
+            break;
+
+        case "Tv":
+            valuelbl.setText("Volume : " + valueSlider.getValue());
+            valueSlider.setVisible(true);
+            btn1.setText("ON");
+            btn2.setText("OFF");
+            break;
+
+        case "AC":
+            valuelbl.setText("Temperature : " + valueSlider.getValue() + "°C");
+            valueSlider.setVisible(true);
+            btn1.setText("ON");
+            btn2.setText("OFF");
+            break;
+
+        case "Door":
+            valuelbl.setText("Status : ");
+
+            valueSlider.setVisible(false);
+
+            btn1.setText("UNLOCK");
+            btn2.setText("LOCK");
+
+            lockedlbl.setText("Locked : ");
+            break;
+    }
+    }//GEN-LAST:event_deviceCboxActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HomePage().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton controlbtn;
+    private javax.swing.JButton backtohomebtn;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
+    private javax.swing.JComboBox<String> deviceCbox;
     private javax.swing.JButton exitbtn;
-    private javax.swing.JLabel headinglbl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel leftPanel;
-    private javax.swing.JLabel logolbl;
-    private javax.swing.JButton manageRoombtn;
-    private javax.swing.JPanel rightPanel;
-    private javax.swing.JLabel sLogo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lockedlbl;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JComboBox<String> roomcbox;
+    private javax.swing.JSlider valueSlider;
+    private javax.swing.JLabel valuelbl;
     private javax.swing.JButton viewStatusbtn;
     // End of variables declaration//GEN-END:variables
 }
