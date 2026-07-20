@@ -1,22 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package smarthomesystem;
 
-/**
- *
- * @author User
- */
 public class Kitchen extends javax.swing.JFrame {
-
-    /**
-     * Creates new form HomePage
-     */
-    public Kitchen() {
+    private MainController controller;
+    
+    public Kitchen(MainController controller) {
         initComponents();
+        this.controller = controller;
         setTitle("Kitchen");
         setLocationRelativeTo(null);
+        
+        loadStatus();
     }
 
     /**
@@ -192,16 +185,22 @@ public class Kitchen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void controlbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlbtnActionPerformed
-        new DeviceControlPage().setVisible(true);
+        new DeviceControlPage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_controlbtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         // TODO add your handling code here:
-        new RoomsPage().setVisible(true);
+        new RoomsPage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_backbtnActionPerformed
-
+    private void loadStatus(){
+        statusLightlbl.setText("Status : "+controller.getLight().getPowerStatus());
+        brighlbl.setText("Brightness : "+controller.getLight().getBrightness());
+        
+        statusFanlbl.setText("Status : "+controller.getFan().getPowerStatus());
+        speedlbl.setText("Speed : "+controller.getFan().getSpeed());
+    }
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         // TODO add your handling code here:
         System.exit(0);
