@@ -45,7 +45,7 @@ public class DeviceControlPage extends javax.swing.JFrame {
         exitbtn = new javax.swing.JButton();
         lockedlbl = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 0));
 
@@ -93,17 +93,27 @@ public class DeviceControlPage extends javax.swing.JFrame {
         viewStatusbtn.setBackground(new java.awt.Color(51, 255, 0));
         viewStatusbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewStatusbtn.setForeground(new java.awt.Color(255, 255, 255));
-        viewStatusbtn.setText("View Status");
+        viewStatusbtn.setText("VIEW STATUS");
 
         backtohomebtn.setBackground(new java.awt.Color(255, 0, 51));
         backtohomebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         backtohomebtn.setForeground(new java.awt.Color(255, 255, 255));
-        backtohomebtn.setText("Back To Home");
+        backtohomebtn.setText("BACK");
+        backtohomebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backtohomebtnActionPerformed(evt);
+            }
+        });
 
         exitbtn.setBackground(new java.awt.Color(255, 0, 51));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setText("Exit");
+        exitbtn.setText("EXIT");
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -151,7 +161,7 @@ public class DeviceControlPage extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(backtohomebtn)
+                .addComponent(backtohomebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
@@ -293,6 +303,17 @@ public class DeviceControlPage extends javax.swing.JFrame {
             break;
     }
     }//GEN-LAST:event_deviceCboxActionPerformed
+
+    private void backtohomebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backtohomebtnActionPerformed
+        // TODO add your handling code here:
+        new HomePage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_backtohomebtnActionPerformed
+
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+        // TODO add your handling code here:
+       System.exit(0);
+    }//GEN-LAST:event_exitbtnActionPerformed
 
     /**
      * @param args the command line arguments
