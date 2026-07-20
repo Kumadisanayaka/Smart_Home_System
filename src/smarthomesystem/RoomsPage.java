@@ -37,9 +37,9 @@ public class RoomsPage extends javax.swing.JFrame {
         bedRoombtn = new javax.swing.JButton();
         kitchenbtn = new javax.swing.JButton();
         officebtn = new javax.swing.JButton();
-        exitbtn = new javax.swing.JButton();
+        backbtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         leftPanel.setBackground(new java.awt.Color(255, 255, 0));
         leftPanel.setPreferredSize(new java.awt.Dimension(590, 415));
@@ -95,10 +95,15 @@ public class RoomsPage extends javax.swing.JFrame {
             }
         });
 
-        exitbtn.setBackground(new java.awt.Color(255, 0, 0));
-        exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setText("Exit");
+        backbtn.setBackground(new java.awt.Color(255, 0, 0));
+        backbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        backbtn.setForeground(new java.awt.Color(255, 255, 255));
+        backbtn.setText("BACK");
+        backbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
@@ -117,7 +122,7 @@ public class RoomsPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitbtn)
+                .addComponent(backbtn)
                 .addGap(31, 31, 31))
         );
         rightPanelLayout.setVerticalGroup(
@@ -133,7 +138,7 @@ public class RoomsPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(officebtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                .addComponent(exitbtn)
+                .addComponent(backbtn)
                 .addGap(16, 16, 16))
         );
 
@@ -181,22 +186,32 @@ public class RoomsPage extends javax.swing.JFrame {
     private void livingRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livingRoombtnActionPerformed
         // TODO add your handling code here:
         new LivingRoom().setVisible(true);
+        dispose();
     }//GEN-LAST:event_livingRoombtnActionPerformed
 
     private void bedRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedRoombtnActionPerformed
         
         new Bedroom().setVisible(true);
+        dispose();
     }//GEN-LAST:event_bedRoombtnActionPerformed
 
     private void kitchenbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitchenbtnActionPerformed
         // TODO add your handling code here:
-        
+        new Kitchen().setVisible(true);
+        dispose();
     }//GEN-LAST:event_kitchenbtnActionPerformed
 
     private void officebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_officebtnActionPerformed
         // TODO add your handling code here:
         new Office().setVisible(true);
+        dispose();
     }//GEN-LAST:event_officebtnActionPerformed
+
+    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+        // TODO add your handling code here:
+        new HomePage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_backbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,8 +219,8 @@ public class RoomsPage extends javax.swing.JFrame {
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backbtn;
     private javax.swing.JButton bedRoombtn;
-    private javax.swing.JButton exitbtn;
     private javax.swing.JLabel headinglbl;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton kitchenbtn;
