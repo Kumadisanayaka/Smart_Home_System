@@ -9,14 +9,16 @@ package smarthomesystem;
  * @author User
  */
 public class LivingRoom extends javax.swing.JFrame {
-
-    /**
-     * Creates new form HomePage
-     */
-    public LivingRoom() {
+    private MainController controller;
+    
+    public LivingRoom(MainController controller) {
         initComponents();
+        this.controller = controller;
         setTitle("Living Room");
         setLocationRelativeTo(null);
+ 
+        
+        loadStatus();
     }
 
     /**
@@ -40,7 +42,7 @@ public class LivingRoom extends javax.swing.JFrame {
         speedlbl = new javax.swing.JLabel();
         lightlbl2 = new javax.swing.JLabel();
         statusTvlbl = new javax.swing.JLabel();
-        speedlbl1 = new javax.swing.JLabel();
+        volumelbl = new javax.swing.JLabel();
         lightlbl3 = new javax.swing.JLabel();
         statusDoorlbl = new javax.swing.JLabel();
         controlbtn = new javax.swing.JButton();
@@ -48,6 +50,11 @@ public class LivingRoom extends javax.swing.JFrame {
         backbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 0));
 
@@ -67,7 +74,7 @@ public class LivingRoom extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        statusLightlbl.setText("Status :");
+        statusLightlbl.setText("Status :  ");
 
         brighlbl.setText("Brightness  :");
 
@@ -91,7 +98,7 @@ public class LivingRoom extends javax.swing.JFrame {
 
         statusTvlbl.setText("Status :");
 
-        speedlbl1.setText("Volume  :");
+        volumelbl.setText("Volume  :");
 
         lightlbl3.setBackground(new java.awt.Color(0, 153, 0));
         lightlbl3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -148,23 +155,23 @@ public class LivingRoom extends javax.swing.JFrame {
                                 .addComponent(lockedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addGap(64, 64, 64)
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lightlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(statusLightlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(brighlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lightlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(statusFanlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(speedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(91, 91, 91)
+                                    .addComponent(statusLightlbl, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addComponent(brighlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(statusFanlbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(speedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(58, 58, 58)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(27, 27, 27)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lightlbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statusTvlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(speedlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lightlbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statusDoorlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 91, Short.MAX_VALUE)))
+                            .addComponent(statusTvlbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(volumelbl, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(statusDoorlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 63, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
@@ -201,7 +208,7 @@ public class LivingRoom extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(statusTvlbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(speedlbl1)
+                        .addComponent(volumelbl)
                         .addGap(34, 34, 34)
                         .addComponent(lightlbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -230,13 +237,13 @@ public class LivingRoom extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void controlbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlbtnActionPerformed
-        new DeviceControlPage().setVisible(true);
+        new DeviceControlPage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_controlbtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         // TODO add your handling code here:
-        new RoomsPage().setVisible(true);
+        new RoomsPage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_backbtnActionPerformed
 
@@ -244,6 +251,23 @@ public class LivingRoom extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitbtnActionPerformed
+    private void loadStatus(){
+        statusLightlbl.setText("Status : "+controller.getLight().getPowerStatus());
+        brighlbl.setText("Brightness : "+controller.getLight().getBrightness());
+        
+        statusFanlbl.setText("Status : "+controller.getFan().getPowerStatus());
+        speedlbl.setText("Speed : "+controller.getFan().getSpeed());
+        
+        statusTvlbl.setText("Status : "+controller.getTv().getPowerStatus());
+        volumelbl.setText("Volume : "+controller.getTv().getVolume());
+        
+        statusDoorlbl.setText("Status : "+controller.getDoor().getLockStatus());
+        
+    }
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -264,10 +288,10 @@ public class LivingRoom extends javax.swing.JFrame {
     private javax.swing.JLabel lockedlbl;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel speedlbl;
-    private javax.swing.JLabel speedlbl1;
     private javax.swing.JLabel statusDoorlbl;
     private javax.swing.JLabel statusFanlbl;
     private javax.swing.JLabel statusLightlbl;
     private javax.swing.JLabel statusTvlbl;
+    private javax.swing.JLabel volumelbl;
     // End of variables declaration//GEN-END:variables
 }
