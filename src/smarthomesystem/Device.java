@@ -7,6 +7,10 @@ public class Device {
         this.name = name;
     }
     
+    public String getName(){
+        return name;
+    }
+    
     public void turnOn(){
         power = true;
     }
@@ -15,7 +19,7 @@ public class Device {
         power = false;
     }
     
-    public void showStatus(){
-        
+    public String getPowerStatus(){
+        return power ? "ON" : "OFF";
     }
 }
