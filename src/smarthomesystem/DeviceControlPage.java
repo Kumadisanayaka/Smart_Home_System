@@ -9,12 +9,11 @@ package smarthomesystem;
  * @author User
  */
 public class DeviceControlPage extends javax.swing.JFrame {
-
-    /**
-     * Creates new form HomePage
-     */
-    public DeviceControlPage() {
+    private MainController controller;
+    
+    public DeviceControlPage(MainController controller) {
         initComponents();
+        this.controller = controller;
         setTitle("Device Control");
         setLocationRelativeTo(null);
     }
@@ -43,7 +42,6 @@ public class DeviceControlPage extends javax.swing.JFrame {
         viewStatusbtn = new javax.swing.JButton();
         backtohomebtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
-        lockedlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -78,15 +76,31 @@ public class DeviceControlPage extends javax.swing.JFrame {
 
         valuelbl.setText("Value : ");
 
+        valueSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                valueSliderStateChanged(evt);
+            }
+        });
+
         btn1.setBackground(new java.awt.Color(0, 255, 0));
         btn1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn1.setForeground(new java.awt.Color(255, 255, 255));
         btn1.setText("ON");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
         btn2.setBackground(new java.awt.Color(255, 0, 0));
         btn2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn2.setForeground(new java.awt.Color(255, 255, 255));
         btn2.setText("OFF");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -94,6 +108,11 @@ public class DeviceControlPage extends javax.swing.JFrame {
         viewStatusbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewStatusbtn.setForeground(new java.awt.Color(255, 255, 255));
         viewStatusbtn.setText("VIEW STATUS");
+        viewStatusbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStatusbtnActionPerformed(evt);
+            }
+        });
 
         backtohomebtn.setBackground(new java.awt.Color(255, 0, 51));
         backtohomebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -141,22 +160,17 @@ public class DeviceControlPage extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(deviceCbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(190, 190, 190)
+                                .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addGap(203, 203, 203)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(mainPanelLayout.createSequentialGroup()
                                         .addGap(11, 11, 11)
-                                        .addComponent(valuelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                        .addGap(218, 218, 218)
-                                        .addComponent(lockedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                        .addGap(190, 190, 190)
-                                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(29, 29, 29)
-                                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(valuelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 143, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
@@ -189,11 +203,9 @@ public class DeviceControlPage extends javax.swing.JFrame {
                 .addComponent(valuelbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lockedlbl)
-                .addGap(14, 14, 14)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                     .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,24 +240,24 @@ public class DeviceControlPage extends javax.swing.JFrame {
         
         switch(room){
             case "Living Room":
-                deviceCbox.addItem("Light");
-                deviceCbox.addItem("Fan");
-                deviceCbox.addItem("Tv");
-                deviceCbox.addItem("Door");
+                deviceCbox.addItem(controller.getLight().getName());
+                deviceCbox.addItem(controller.getFan().getName());
+                deviceCbox.addItem(controller.getTv().getName());
+                deviceCbox.addItem(controller.getDoor().getName());
                 break;
             case "Bedroom":
-                deviceCbox.addItem("Light");
-                deviceCbox.addItem("Fan");
-                deviceCbox.addItem("AC");
+                deviceCbox.addItem(controller.getLight().getName());
+                deviceCbox.addItem(controller.getFan().getName());
+                deviceCbox.addItem(controller.getAc().getName());
                 break;
             case "Kitchen":
-                deviceCbox.addItem("Light");
-                deviceCbox.addItem("Fan");
+                deviceCbox.addItem(controller.getLight().getName());
+                deviceCbox.addItem(controller.getFan().getName());
                 break;
             case "Office":
-                deviceCbox.addItem("Light");
-                deviceCbox.addItem("Fan");
-                deviceCbox.addItem("AC");
+                deviceCbox.addItem(controller.getLight().getName());
+                deviceCbox.addItem(controller.getFan().getName());
+                deviceCbox.addItem(controller.getAc().getName());
                 break;
         }
         
@@ -266,6 +278,8 @@ public class DeviceControlPage extends javax.swing.JFrame {
         case "Light":
             valuelbl.setText("Brightness : " + valueSlider.getValue());
             valueSlider.setVisible(true);
+            valueSlider.setMinimum(0);
+            valueSlider.setMaximum(100);
             btn1.setText("ON");
             btn2.setText("OFF");
             break;
@@ -273,13 +287,17 @@ public class DeviceControlPage extends javax.swing.JFrame {
         case "Fan":
             valuelbl.setText("Speed : " + valueSlider.getValue());
             valueSlider.setVisible(true);
+            valueSlider.setMinimum(0);
+            valueSlider.setMaximum(5);
             btn1.setText("ON");
             btn2.setText("OFF");
             break;
 
-        case "Tv":
+        case "TV":
             valuelbl.setText("Volume : " + valueSlider.getValue());
             valueSlider.setVisible(true);
+            valueSlider.setMinimum(0);
+            valueSlider.setMaximum(100);
             btn1.setText("ON");
             btn2.setText("OFF");
             break;
@@ -287,6 +305,8 @@ public class DeviceControlPage extends javax.swing.JFrame {
         case "AC":
             valuelbl.setText("Temperature : " + valueSlider.getValue() + "°C");
             valueSlider.setVisible(true);
+            valueSlider.setMinimum(16);
+            valueSlider.setMaximum(30);
             btn1.setText("ON");
             btn2.setText("OFF");
             break;
@@ -299,14 +319,14 @@ public class DeviceControlPage extends javax.swing.JFrame {
             btn1.setText("UNLOCK");
             btn2.setText("LOCK");
 
-            lockedlbl.setText("Locked : ");
+            //lockedlbl.setText("Locked : ");
             break;
     }
     }//GEN-LAST:event_deviceCboxActionPerformed
 
     private void backtohomebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backtohomebtnActionPerformed
         // TODO add your handling code here:
-        new HomePage().setVisible(true);
+        new HomePage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_backtohomebtnActionPerformed
 
@@ -314,6 +334,129 @@ public class DeviceControlPage extends javax.swing.JFrame {
         // TODO add your handling code here:
        System.exit(0);
     }//GEN-LAST:event_exitbtnActionPerformed
+
+    private void valueSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_valueSliderStateChanged
+        // TODO add your handling code here:
+        Object selected = deviceCbox.getSelectedItem();
+        
+        if(selected == null){
+            return;
+        }
+        
+        String device = selected.toString();
+    
+        switch(device){
+            case "Light":
+                controller.getLight().setBrightness(valueSlider.getValue());
+                valuelbl.setText("Brightness : "+valueSlider.getValue());
+                break;
+            case "Fan":
+                controller.getFan().setSpeed(valueSlider.getValue());
+                valuelbl.setText("Speed : "+valueSlider.getValue());
+                break;
+            case "TV":
+                controller.getTv().setVolume(valueSlider.getValue());
+                valuelbl.setText("Volume : "+valueSlider.getValue());
+                break;
+            case "AC":
+                controller.getAc().setTemperature(valueSlider.getValue());
+                valuelbl.setText("Temperature : "+valueSlider.getValue());
+                break;
+            
+        }
+    }//GEN-LAST:event_valueSliderStateChanged
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        // TODO add your handling code here:
+         Object selected = deviceCbox.getSelectedItem();
+        
+        if(selected == null){
+            return;
+        }
+        
+        String device = selected.toString();
+        
+           switch(device){
+            case "Light":
+                controller.getLight().turnOn();
+                valuelbl.setText("Brightness : "+valueSlider.getValue());
+                //valuelbl.setText(valuelbl.getText()+"ON");
+                break;
+            case "Fan":
+                controller.getFan().turnOn();
+                //valuelbl.setText(valuelbl.getText()+"ON");
+                break;
+            case "TV":
+                controller.getTv().turnOn();
+                //valuelbl.setText(valuelbl.getText()+"ON");
+                break;
+            case "AC":
+                controller.getAc().turnOn();
+                //valuelbl.setText(valuelbl.getText()+"ON");
+                break;
+            case "Door":
+                controller.getDoor().unlock();
+                valuelbl.setText("Status : "+controller.getDoor().getLockStatus());
+                //lockedlbl.setText(lockedlbl.getText()+"UNLOCK");
+                break;
+        }
+        
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+        Object selected = deviceCbox.getSelectedItem();
+        
+        if(selected == null){
+            return;
+        }
+        
+        String device = selected.toString();
+        
+           switch(device){
+            case "Light":
+                controller.getLight().turnOff();
+                valuelbl.setText("Brightness : 0");
+                break;
+            case "Fan":
+                controller.getFan().turnOff();
+                break;
+            case "TV":
+                controller.getTv().turnOff();
+                break;
+            case "AC":
+                controller.getAc().turnOff();
+                break;
+            case "Door":
+                controller.getDoor().lock();
+                valuelbl.setText("Status : "+controller.getDoor().getLockStatus());
+                //lockedlbl.setText(lockedlbl.getText()+"LOCK");
+                break;
+        }
+        
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void viewStatusbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusbtnActionPerformed
+        // TODO add your handling code here:
+        String room = roomcbox.getSelectedItem().toString();
+        
+        switch(room){
+            case "Living Room":
+                new LivingRoom(controller).setVisible(true);
+                dispose();
+                break;
+            case "Bedroom":
+                new Bedroom(controller).setVisible(true);
+                dispose();
+                break;
+            case "Office":
+                new Office(controller).setVisible(true);
+                dispose();
+                break;
+        }
+        
+        
+    }//GEN-LAST:event_viewStatusbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,7 +474,6 @@ public class DeviceControlPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lockedlbl;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JComboBox<String> roomcbox;
     private javax.swing.JSlider valueSlider;
