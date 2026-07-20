@@ -9,12 +9,11 @@ package smarthomesystem;
  * @author User
  */
 public class RoomsPage extends javax.swing.JFrame {
-
-    /**
-     * Creates new form HomePage
-     */
-    public RoomsPage() {
+    private MainController controller;
+    
+    public RoomsPage(MainController controller) {
         initComponents();
+        this.controller = controller;
         setTitle("Rooms");
         setLocationRelativeTo(null);
     }
@@ -185,31 +184,31 @@ public class RoomsPage extends javax.swing.JFrame {
 
     private void livingRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livingRoombtnActionPerformed
         // TODO add your handling code here:
-        new LivingRoom().setVisible(true);
+        new LivingRoom(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_livingRoombtnActionPerformed
 
     private void bedRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedRoombtnActionPerformed
         
-        new Bedroom().setVisible(true);
+        new Bedroom(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_bedRoombtnActionPerformed
 
     private void kitchenbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitchenbtnActionPerformed
         // TODO add your handling code here:
-        new Kitchen().setVisible(true);
+        new Kitchen(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_kitchenbtnActionPerformed
 
     private void officebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_officebtnActionPerformed
         // TODO add your handling code here:
-        new Office().setVisible(true);
+        new Office(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_officebtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         // TODO add your handling code here:
-        new HomePage().setVisible(true);
+        new HomePage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_backbtnActionPerformed
 
