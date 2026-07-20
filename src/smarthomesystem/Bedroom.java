@@ -105,6 +105,11 @@ public class Bedroom extends javax.swing.JFrame {
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("EXIT");
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbtnActionPerformed(evt);
+            }
+        });
 
         backbtn.setBackground(new java.awt.Color(255, 0, 0));
         backbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -192,7 +197,7 @@ public class Bedroom extends javax.swing.JFrame {
                     .addComponent(controlbtn)
                     .addComponent(exitbtn)
                     .addComponent(backbtn))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,9 +208,7 @@ public class Bedroom extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -213,12 +216,19 @@ public class Bedroom extends javax.swing.JFrame {
 
     private void controlbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlbtnActionPerformed
         new DeviceControlPage().setVisible(true);
+        dispose();
     }//GEN-LAST:event_controlbtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         // TODO add your handling code here:
         new RoomsPage().setVisible(true);
+        dispose();
     }//GEN-LAST:event_backbtnActionPerformed
+
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitbtnActionPerformed
 
     /**
      * @param args the command line arguments
