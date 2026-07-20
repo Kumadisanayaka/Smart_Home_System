@@ -81,7 +81,12 @@ public class HomePage extends javax.swing.JFrame {
         exitbtn.setBackground(new java.awt.Color(255, 0, 51));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setText("Exit");
+        exitbtn.setText("EXIT");
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbtnActionPerformed(evt);
+            }
+        });
 
         sLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/smarthomesystem/3rdLogo.png"))); // NOI18N
@@ -90,34 +95,32 @@ public class HomePage extends javax.swing.JFrame {
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rightPanelLayout.createSequentialGroup()
-                .addComponent(sLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(sLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(75, Short.MAX_VALUE)
                 .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                        .addComponent(exitbtn)
+                        .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                         .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(manageRoombtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(controlbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(viewStatusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(66, 66, 66))))
+                            .addComponent(viewStatusbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65))))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightPanelLayout.createSequentialGroup()
-                .addComponent(sLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(manageRoombtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(controlbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(manageRoombtn)
-                .addGap(18, 18, 18)
-                .addComponent(controlbtn)
-                .addGap(18, 18, 18)
-                .addComponent(viewStatusbtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(exitbtn)
+                .addComponent(viewStatusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
 
@@ -178,17 +181,25 @@ public class HomePage extends javax.swing.JFrame {
     private void controlbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlbtnActionPerformed
         // TODO add your handling code here:
         new DeviceControlPage().setVisible(true);
+        dispose();
     }//GEN-LAST:event_controlbtnActionPerformed
 
     private void manageRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageRoombtnActionPerformed
         // TODO add your handling code here:
         new RoomsPage().setVisible(true);
+        dispose();
     }//GEN-LAST:event_manageRoombtnActionPerformed
 
     private void viewStatusbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusbtnActionPerformed
         // TODO add your handling code here:
         new ViewStatus().setVisible(true);
+        dispose();
     }//GEN-LAST:event_viewStatusbtnActionPerformed
+
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitbtnActionPerformed
 
     /**
      * @param args the command line arguments
