@@ -66,11 +66,21 @@ public class ViewStatus extends javax.swing.JFrame {
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("EXIT");
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbtnActionPerformed(evt);
+            }
+        });
 
         backbtn.setBackground(new java.awt.Color(255, 0, 0));
         backbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         backbtn.setForeground(new java.awt.Color(255, 255, 255));
         backbtn.setText("BACK");
+        backbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -104,7 +114,7 @@ public class ViewStatus extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(refresbtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitbtn)
                     .addComponent(backbtn))
@@ -124,6 +134,17 @@ public class ViewStatus extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+        // TODO add your handling code here:
+        new HomePage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_backbtnActionPerformed
+
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitbtnActionPerformed
 
     /**
      * @param args the command line arguments

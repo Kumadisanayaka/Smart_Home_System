@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -76,7 +76,7 @@
                   <Component id="jScrollPane1" min="-2" pref="162" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="refresbtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="69" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="exitbtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="backbtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -178,6 +178,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="EXIT"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="backbtn">
           <Properties>
@@ -192,6 +195,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="BACK"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backbtnActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
