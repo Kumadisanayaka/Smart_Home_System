@@ -10,11 +10,11 @@ package smarthomesystem;
  */
 public class HomePage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form HomePage
-     */
-    public HomePage() {
+    private MainController controller;
+    
+    public HomePage(MainController controller) {
         initComponents();
+        this.controller = controller;
         setTitle("Home");
         setLocationRelativeTo(null);
     }
@@ -180,13 +180,13 @@ public class HomePage extends javax.swing.JFrame {
 
     private void controlbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlbtnActionPerformed
         // TODO add your handling code here:
-        new DeviceControlPage().setVisible(true);
+        new DeviceControlPage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_controlbtnActionPerformed
 
     private void manageRoombtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageRoombtnActionPerformed
         // TODO add your handling code here:
-        new RoomsPage().setVisible(true);
+        new RoomsPage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_manageRoombtnActionPerformed
 
@@ -205,33 +205,12 @@ public class HomePage extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new HomePage().setVisible(true);
+                MainController controller = new MainController();
+                new HomePage(controller).setVisible(true);
             }
         });
     }
