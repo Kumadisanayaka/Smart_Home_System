@@ -8,6 +8,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -57,27 +60,27 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="lightlbl" min="-2" pref="141" max="-2" attributes="0"/>
-                                      <Component id="statusLightlbl" min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="brighlbl" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                       <Component id="lightlbl1" min="-2" pref="141" max="-2" attributes="0"/>
-                                      <Component id="statusFanlbl" min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="speedlbl" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="statusLightlbl" pref="174" max="32767" attributes="0"/>
+                                      <Component id="brighlbl" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Component id="statusFanlbl" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="speedlbl" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                   <Component id="jSeparator1" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lightlbl2" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="statusTvlbl" min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="speedlbl1" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                               <Component id="lightlbl3" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="statusDoorlbl" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="statusTvlbl" max="32767" attributes="0"/>
+                              <Component id="volumelbl" alignment="0" pref="169" max="32767" attributes="0"/>
+                              <Component id="statusDoorlbl" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -120,7 +123,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="statusTvlbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="speedlbl1" min="-2" max="-2" attributes="0"/>
+                          <Component id="volumelbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="lightlbl3" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -181,7 +184,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="statusLightlbl">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Status :"/>
+            <Property name="text" type="java.lang.String" value="Status :  "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="brighlbl">
@@ -236,7 +239,7 @@
             <Property name="text" type="java.lang.String" value="Status :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="speedlbl1">
+        <Component class="javax.swing.JLabel" name="volumelbl">
           <Properties>
             <Property name="text" type="java.lang.String" value="Volume  :"/>
           </Properties>
