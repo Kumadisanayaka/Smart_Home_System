@@ -219,14 +219,20 @@ public class Bedroom extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backbtnActionPerformed
     private void loadStatus(){
-        statusLightlbl.setText("Status : "+controller.getLight().getPowerStatus());
-        brighlbl.setText("Brightness : "+controller.getLight().getBrightness());
+        String room = "Bedroom";
         
-        statusFanlbl.setText("Status : "+controller.getFan().getPowerStatus());
-        speedlbl.setText("Speed : "+controller.getFan().getSpeed());
+        Light light = controller.getLight(room);
+        Fan fan = controller.getFan(room);
+        AC ac = controller.getAc(room);
         
-        statusAclbl.setText("Status : "+controller.getAc().getPowerStatus());
-        templbl.setText("Temperature : "+controller.getAc().getTemperature()+"°C");
+        statusLightlbl.setText("Status : "+light.getPowerStatus());
+        brighlbl.setText("Brightness : "+light.getBrightness());
+        
+        statusFanlbl.setText("Status : "+fan.getPowerStatus());
+        speedlbl.setText("Speed : "+fan.getSpeed());
+        
+        statusAclbl.setText("Status : "+ac.getPowerStatus());
+        templbl.setText("Temperature : "+ac.getTemperature()+"°C");
     }
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         // TODO add your handling code here:

@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package smarthomesystem;
 
-/**
- *
- * @author User
- */
 public class LivingRoom extends javax.swing.JFrame {
     private MainController controller;
     
@@ -252,16 +245,23 @@ public class LivingRoom extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitbtnActionPerformed
     private void loadStatus(){
-        statusLightlbl.setText("Status : "+controller.getLight().getPowerStatus());
-        brighlbl.setText("Brightness : "+controller.getLight().getBrightness());
+        String room = "Living Room";
         
-        statusFanlbl.setText("Status : "+controller.getFan().getPowerStatus());
-        speedlbl.setText("Speed : "+controller.getFan().getSpeed());
+        Light light = controller.getLight(room);
+        Fan fan = controller.getFan(room);
+        TV tv = controller.getTv(room);
+        Door door = controller.getDoor(room);
         
-        statusTvlbl.setText("Status : "+controller.getTv().getPowerStatus());
-        volumelbl.setText("Volume : "+controller.getTv().getVolume());
+        statusLightlbl.setText("Status : "+light.getPowerStatus());
+        brighlbl.setText("Brightness : "+light.getBrightness());
         
-        statusDoorlbl.setText("Status : "+controller.getDoor().getLockStatus());
+        statusFanlbl.setText("Status : "+fan.getPowerStatus());
+        speedlbl.setText("Speed : "+fan.getSpeed());
+        
+        statusTvlbl.setText("Status : "+tv.getPowerStatus());
+        volumelbl.setText("Volume : "+tv.getVolume());
+        
+        statusDoorlbl.setText("Status : "+door.getLockStatus());
         
     }
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

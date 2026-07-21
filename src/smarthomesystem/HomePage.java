@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package smarthomesystem;
 
-/**
- *
- * @author User
- */
 public class HomePage extends javax.swing.JFrame {
 
     private MainController controller;
@@ -192,7 +184,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void viewStatusbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusbtnActionPerformed
         // TODO add your handling code here:
-        new ViewStatus().setVisible(true);
+        new ViewStatus(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_viewStatusbtnActionPerformed
 

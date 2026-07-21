@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package smarthomesystem;
 
-/**
- *
- * @author User
- */
 public class DeviceControlPage extends javax.swing.JFrame {
     private MainController controller;
     
@@ -240,24 +233,24 @@ public class DeviceControlPage extends javax.swing.JFrame {
         
         switch(room){
             case "Living Room":
-                deviceCbox.addItem(controller.getLight().getName());
-                deviceCbox.addItem(controller.getFan().getName());
-                deviceCbox.addItem(controller.getTv().getName());
-                deviceCbox.addItem(controller.getDoor().getName());
+                deviceCbox.addItem(controller.getLight(room).getName());
+                deviceCbox.addItem(controller.getFan(room).getName());
+                deviceCbox.addItem(controller.getTv(room).getName());
+                deviceCbox.addItem(controller.getDoor(room).getName());
                 break;
             case "Bedroom":
-                deviceCbox.addItem(controller.getLight().getName());
-                deviceCbox.addItem(controller.getFan().getName());
-                deviceCbox.addItem(controller.getAc().getName());
+                deviceCbox.addItem(controller.getLight(room).getName());
+                deviceCbox.addItem(controller.getFan(room).getName());
+                deviceCbox.addItem(controller.getAc(room).getName());
                 break;
             case "Kitchen":
-                deviceCbox.addItem(controller.getLight().getName());
-                deviceCbox.addItem(controller.getFan().getName());
+                deviceCbox.addItem(controller.getLight(room).getName());
+                deviceCbox.addItem(controller.getLight(room).getName());
                 break;
             case "Office":
-                deviceCbox.addItem(controller.getLight().getName());
-                deviceCbox.addItem(controller.getFan().getName());
-                deviceCbox.addItem(controller.getAc().getName());
+                deviceCbox.addItem(controller.getLight(room).getName());
+                deviceCbox.addItem(controller.getFan(room).getName());
+                deviceCbox.addItem(controller.getAc(room).getName());
                 break;
         }
         
@@ -344,22 +337,23 @@ public class DeviceControlPage extends javax.swing.JFrame {
         }
         
         String device = selected.toString();
+        String room = roomcbox.getSelectedItem().toString();
     
         switch(device){
             case "Light":
-                controller.getLight().setBrightness(valueSlider.getValue());
+                controller.getLight(room).setBrightness(valueSlider.getValue());
                 valuelbl.setText("Brightness : "+valueSlider.getValue());
                 break;
             case "Fan":
-                controller.getFan().setSpeed(valueSlider.getValue());
+                controller.getFan(room).setSpeed(valueSlider.getValue());
                 valuelbl.setText("Speed : "+valueSlider.getValue());
                 break;
             case "TV":
-                controller.getTv().setVolume(valueSlider.getValue());
+                controller.getTv(room).setVolume(valueSlider.getValue());
                 valuelbl.setText("Volume : "+valueSlider.getValue());
                 break;
             case "AC":
-                controller.getAc().setTemperature(valueSlider.getValue());
+                controller.getAc(room).setTemperature(valueSlider.getValue());
                 valuelbl.setText("Temperature : "+valueSlider.getValue());
                 break;
             
@@ -375,28 +369,29 @@ public class DeviceControlPage extends javax.swing.JFrame {
         }
         
         String device = selected.toString();
+        String room = roomcbox.getSelectedItem().toString();
         
            switch(device){
             case "Light":
-                controller.getLight().turnOn();
+                controller.getLight(room).turnOn();
                 valuelbl.setText("Brightness : "+valueSlider.getValue());
                 //valuelbl.setText(valuelbl.getText()+"ON");
                 break;
             case "Fan":
-                controller.getFan().turnOn();
+                controller.getFan(room).turnOn();
                 //valuelbl.setText(valuelbl.getText()+"ON");
                 break;
             case "TV":
-                controller.getTv().turnOn();
+                controller.getTv(room).turnOn();
                 //valuelbl.setText(valuelbl.getText()+"ON");
                 break;
             case "AC":
-                controller.getAc().turnOn();
+                controller.getAc(room).turnOn();
                 //valuelbl.setText(valuelbl.getText()+"ON");
                 break;
             case "Door":
-                controller.getDoor().unlock();
-                valuelbl.setText("Status : "+controller.getDoor().getLockStatus());
+                controller.getDoor(room).unlock();
+                valuelbl.setText("Status : "+controller.getDoor(room).getLockStatus());
                 //lockedlbl.setText(lockedlbl.getText()+"UNLOCK");
                 break;
         }
@@ -412,24 +407,25 @@ public class DeviceControlPage extends javax.swing.JFrame {
         }
         
         String device = selected.toString();
+        String room = roomcbox.getSelectedItem().toString();
         
            switch(device){
             case "Light":
-                controller.getLight().turnOff();
+                controller.getLight(room).turnOff();
                 valuelbl.setText("Brightness : 0");
                 break;
             case "Fan":
-                controller.getFan().turnOff();
+                controller.getFan(room).turnOff();
                 break;
             case "TV":
-                controller.getTv().turnOff();
+                controller.getTv(room).turnOff();
                 break;
             case "AC":
-                controller.getAc().turnOff();
+                controller.getAc(room).turnOff();
                 break;
             case "Door":
-                controller.getDoor().lock();
-                valuelbl.setText("Status : "+controller.getDoor().getLockStatus());
+                controller.getDoor(room).lock();
+                valuelbl.setText("Status : "+controller.getDoor(room).getLockStatus());
                 //lockedlbl.setText(lockedlbl.getText()+"LOCK");
                 break;
         }
@@ -451,6 +447,10 @@ public class DeviceControlPage extends javax.swing.JFrame {
                 break;
             case "Office":
                 new Office(controller).setVisible(true);
+                dispose();
+                break;
+             case "Kitchen":
+                new Kitchen(controller).setVisible(true);
                 dispose();
                 break;
         }
