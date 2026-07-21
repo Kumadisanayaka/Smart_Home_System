@@ -57,18 +57,18 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lightlbl" min="-2" pref="141" max="-2" attributes="0"/>
-                                      <Component id="statusLightlbl" min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="brighlbl" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lightlbl" pref="141" max="32767" attributes="0"/>
+                                      <Component id="statusLightlbl" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="brighlbl" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                                   <Component id="jSeparator1" min="-2" pref="29" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lightlbl1" min="-2" pref="141" max="-2" attributes="0"/>
-                                      <Component id="statusFanlbl" min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="speedlbl" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lightlbl1" pref="141" max="32767" attributes="0"/>
+                                      <Component id="statusFanlbl" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="speedlbl" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
