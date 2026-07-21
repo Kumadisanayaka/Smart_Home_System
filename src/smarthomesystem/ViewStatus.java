@@ -1,22 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package smarthomesystem;
 
-/**
- *
- * @author User
- */
-public class ViewStatus extends javax.swing.JFrame {
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
-    /**
-     * Creates new form HomePage
-     */
-    public ViewStatus() {
+public class ViewStatus extends javax.swing.JFrame {
+    private MainController controller;
+    public ViewStatus(MainController controller) {
         initComponents();
+        this.controller = controller;
         setTitle("View Status");
         setLocationRelativeTo(null);
+        
+        loadStatusTable();
     }
 
     /**
@@ -61,6 +57,11 @@ public class ViewStatus extends javax.swing.JFrame {
         refresbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         refresbtn.setForeground(new java.awt.Color(255, 255, 255));
         refresbtn.setText("REFRES");
+        refresbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refresbtnActionPerformed(evt);
+            }
+        });
 
         exitbtn.setBackground(new java.awt.Color(255, 0, 0));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -137,14 +138,32 @@ public class ViewStatus extends javax.swing.JFrame {
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         // TODO add your handling code here:
-        new HomePage().setVisible(true);
+        new HomePage(controller).setVisible(true);
         dispose();
     }//GEN-LAST:event_backbtnActionPerformed
-
+    
+    private void loadStatusTable(){
+        DefaultTableModel dtm = (DefaultTableModel)statustbl.getModel();
+        
+        dtm.setRowCount(0);
+        
+        ArrayList<Object[]> list = controller.getDeviceStatus();
+        
+        for(Object[]row : list){
+            dtm.addRow(row);
+        }
+    
+    }
+    
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitbtnActionPerformed
+
+    private void refresbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresbtnActionPerformed
+        // TODO add your handling code here:
+        loadStatusTable();
+    }//GEN-LAST:event_refresbtnActionPerformed
 
     /**
      * @param args the command line arguments

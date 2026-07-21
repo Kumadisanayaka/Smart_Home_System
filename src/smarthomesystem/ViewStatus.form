@@ -164,6 +164,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="REFRES"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refresbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="exitbtn">
           <Properties>
